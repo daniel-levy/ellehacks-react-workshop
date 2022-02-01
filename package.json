@@ -1,0 +1,49 @@
+{
+  "name": "test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tds/core-box": "^2.0.2",
+    "@tds/core-button": "^2.1.10",
+    "@tds/core-card": "^2.2.0",
+    "@tds/core-colours": "^2.2.1",
+    "@tds/core-css-reset": "^2.0.5",
+    "@tds/core-flex-grid": "^3.0.3",
+    "@tds/core-heading": "^2.2.8",
+    "@tds/core-image": "^2.0.16",
+    "@tds/core-input": "^3.0.26",
+    "@tds/core-strong": "^2.1.14",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-flexbox-grid": "^2.1.2",
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom-fourteen",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "jest-environment-jsdom": "^26.6.2"
+  }
+}
