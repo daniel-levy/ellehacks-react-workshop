@@ -1,7 +1,6 @@
 {
-  "name": "test",
+  "name": "frontend",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@tds/core-box": "^2.0.2",
     "@tds/core-button": "^2.1.10",
@@ -16,6 +15,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
+    "axios": "^0.25.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-flexbox-grid": "^2.1.2",
@@ -27,9 +27,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom-fourteen",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [

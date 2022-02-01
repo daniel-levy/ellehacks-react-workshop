@@ -6,7 +6,7 @@ import Box from "@tds/core-box";
 import Button from "@tds/core-button";
 import InputFields from "./InputFields";
 import Result from "./Result";
-import { factor } from "../helpers/factor";
+import { getRoots } from "../services/getRootsService";
 
 const StyledPolynomialContainer = styled.div`
   margin: auto;
@@ -24,8 +24,8 @@ const Polynomial = () => {
     c: 0,
   });
 
-  const solvePolynomial = () => {
-    const { r1, r2 } = factor(coefficients.a, coefficients.b, coefficients.c);
+  const solvePolynomial = async () => {
+    const { r1, r2 } = await getRoots(coefficients);
     if (!r1 || !r2) {
       setResult(`There are no real roots`);
     } else if (r1 === r2) {

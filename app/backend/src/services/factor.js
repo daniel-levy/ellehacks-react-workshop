@@ -1,4 +1,4 @@
-export const factor = (a, b, c) => {
+const factor = (a, b, c) => {
   // Calculate the value inside the square root which determines if there will be complex roots
   const q = Math.pow(b, 2) - 4 * a * c;
 
@@ -12,3 +12,5 @@ export const factor = (a, b, c) => {
     return { r1: r1, r2: r2 };
   }
 };
+
+module.exports = factor;
