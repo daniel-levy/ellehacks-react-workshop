@@ -1,9 +1,11 @@
 import axios from 'axios';
 
+const backendUrl = 'http://localhost:8080'
+
 const getTodos = async () => {
   let results = {};
   try {
-    results = await axios.get('http://localhost:8080/todos');
+    results = await axios.get(`${backendUrl}/todos`);
     return results.data;
   } catch (err) {
     console.log(err);
@@ -15,7 +17,7 @@ const deleteTodo = async (id) => {
   console.log(id)
   let results = {};
   try {
-    results = await axios.delete(`http://localhost:8080/todos/${id}`);
+    results = await axios.delete(`${backendUrl}/todos/${id}`);
     return results.data;
   } catch (err) {
     console.log(err);
@@ -26,7 +28,7 @@ const deleteTodo = async (id) => {
 const updateTodo = async (id, text, isCompleted) => {
   let results = {};
   try {
-    results = await axios.put(`http://localhost:8080/todos/${id}`, { text: text, isCompleted: isCompleted });
+    results = await axios.put(`${backendUrl}/todos/${id}`, { text: text, isCompleted: isCompleted });
     return results.data;
   } catch (err) {
     console.log(err);
@@ -37,7 +39,7 @@ const updateTodo = async (id, text, isCompleted) => {
 const createTodo = async (text) => {
   let results = {};
   try {
-    results = await axios.post(`http://localhost:8080/todos`, { text: text })
+    results = await axios.post(`${backendUrl}/todos`, { text: text })
     return results.data;
   } catch (err) {
     console.log(err);

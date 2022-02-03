@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header";
+import Header from "./components/Header";
 import styled from "styled-components";
-import Todo from './Todo'
-import TodoForm from "./TodoForm";
+import Todo from './components/Todo'
+import TodoForm from "./components/TodoForm";
 import { Typography } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { createTodo, updateTodo, deleteTodo, getTodos } from "../services/todoService";
+import { createTodo, updateTodo, deleteTodo, getTodos } from "./services/todoService";
 
 const PaddedContent = styled.div`
   padding-top: 100px;
@@ -34,7 +34,7 @@ const App = () => {
   
   const getData = async () => {
     const result = await getTodos();
-    // setTodos(result)
+    setTodos(result)
   }
 
   useEffect(() => {
