@@ -15,7 +15,7 @@ const PaddedContent = styled.div`
 `;
 
 const App = () => {
-  const [todos, setTodos] = useState([{_id: "61fb256bb5f101460d4901c5", text: 'test', isCompleted: false}, {_id: "61fb0bc2e72081fcf8be59ec", text: 'test', isCompleted: false}]);
+  const [todos, setTodos] = useState();
   
   const addTodo = async (text) => {
     await createTodo(text);
