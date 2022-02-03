@@ -1,20 +1,63 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
-import Polynomial from "./Polynomial";
 import styled from "styled-components";
+import Todo from './Todo'
+import TodoForm from "./TodoForm";
+import { Typography } from "@mui/material";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { createTodo, updateTodo, deleteTodo, getTodos } from "../services/todoService";
 
 const PaddedContent = styled.div`
-  max-width: 1200px;
+  padding-top: 100px;
+  max-width: 600px;
   margin: 0 auto;
-  height: 100%;
 `;
 
-function App() {
+const App = () => {
+  const [todos, setTodos] = useState([{_id: "61fb256bb5f101460d4901c5", text: 'test', isCompleted: false}, {_id: "61fb0bc2e72081fcf8be59ec", text: 'test', isCompleted: false}]);
+  
+  const addTodo = async (text) => {
+    await createTodo(text);
+    await getData();
+  };
+  
+  const toggleTodo = async (index, text, isCompleted) => {
+    await updateTodo(index, text, !isCompleted);
+    await getData();
+  };
+  
+  const removeTodo = async (index) => {
+    await deleteTodo(index);
+    await getData();
+  };
+  
+  const getData = async () => {
+    const result = await getTodos();
+    // setTodos(result)
+  }
+
+  useEffect(() => {
+    getData(); 
+  }, [])
+
   return (
     <div>
       <Header />
       <PaddedContent>
-        <Polynomial></Polynomial>
+        <Card sx={{ width: 700 }}>
+          <CardContent>
+            <Typography variant="h5" component="div" sx={{ color: "#4B286D", paddingBottom: '24px' }}>
+              Add To-do
+            </Typography>
+            <>
+              {todos.map((todo) => {
+                return(<Todo key={todo._id} todo={todo} toggleTodo={toggleTodo} removeTodo={removeTodo}></Todo>)
+              })}
+            </>
+            <TodoForm addTodo={addTodo}/>
+          </CardContent>
+        </Card>
       </PaddedContent>
     </div>
   );

@@ -1,24 +1,23 @@
-import React from "react";
-import Heading from "@tds/core-heading";
-import { colorTelusPurple } from "@tds/core-colours";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
-import styled from "styled-components";
-
-const StyledHeader = styled.header`
-  width: 100%;
-  height: 72px;
-  background-color: ${colorTelusPurple};
-  padding: 10px 0 10px 100px;
-`;
-
+               
 const Header = () => {
   return (
-    <StyledHeader>
-      <Heading level="h1" invert>
-        React Testing Tutorial
-      </Heading>
-    </StyledHeader>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar color="transparent" position="static" sx={{height: '90px', justifyContent: 'center'}}>
+        <Toolbar>
+          <img src="Logo.jpg" alt="logo"/>
+          <Typography variant="h5" component="div" sx={{ color: "#4B286D", flexGrow: 1 }}>
+            ElleHacks React Tutorial
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
-};
+}
 
 export default Header;
