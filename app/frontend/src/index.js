@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
-import CSSReset from "@tds/core-css-reset";
+import App from "./App";
 
 ReactDOM.render(
-  <div>
-    <CSSReset />
+  <React.StrictMode>
     <App />
-  </div>,
+  </React.StrictMode>,
   document.getElementById("root")
 );
