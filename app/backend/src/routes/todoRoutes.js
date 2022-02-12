@@ -20,6 +20,7 @@ router.put('/:id', async (req, res) => {
   const result = await updateTodo(id, todoText, isCompleted)
   res.send(result);
 });
+
 router.delete('/:id', async (req, res) => {
   const id = req.params.id;
   const result = await deleteTodo(id)

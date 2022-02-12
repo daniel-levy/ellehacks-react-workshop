@@ -47,7 +47,7 @@ const App = () => {
       <PaddedContent>
         <Card sx={{ width: 700 }}>
           <CardContent>
-            <Typography variant="h5" component="div" sx={{ color: "#4B286D", paddingBottom: '24px' }}>
+            <Typography variant="h5" component="div" sx={{ color: "#4B286D", paddingBottom: '12px' }}>
               Add To-do
             </Typography>
             <>
